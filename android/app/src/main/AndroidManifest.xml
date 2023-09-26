@@ -1,0 +1,52 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.audiome">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme"
+      >
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="singleTask"
+        android:windowSoftInputMode="adjustResize"
+        android:exported="true"
+        >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+        <intent-filter android:label="filter_react_native">
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="exampleScheme"/>
+        </intent-filter>
+      </activity>
+      <meta-data
+  android:name="com.google.android.geo.API_KEY"
+  android:value="AIzaSyDKqwwNppucMkV9pOpmvs56tf21fID42Rg"/>
+      <!-- <meta-data
+     android:name="com.google.android.geo.API_KEY"
+     android:value="AIzaSyAclnqQ6a8Qa5rkslkGSlZn2RVXyRAnAk8"/> -->
+     <!-- AIzaSyAmQA_Z6YgjMTgs88b4JneseCtLzTBMeJI -->
+      <!-- <meta-data
+   android:name="com.google.android.geo.API_KEY"
+   android:value="AIzaSyAcA5yqRLAmmIZK6KkCrfXSFeAu9SvMdho"/> -->
+  <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+   	<meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+    <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+      <service android:name="com.asterinet.react.bgactions.RNBackgroundActionsTask" android:exported="false"/>
+    </application>
+</manifest>
